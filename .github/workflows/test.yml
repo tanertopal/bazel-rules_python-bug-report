@@ -1,0 +1,17 @@
+name: Test
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8.12
+      - name: Compile lockfile
+        run: ./bazelisk run //:requirements.update
+      - name: Build server
+        run: ./bazelisk build //:server
