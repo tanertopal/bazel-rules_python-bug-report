@@ -1,5 +1,7 @@
 # Bazel rules_python bug report
 
+**Related issue:** https://github.com/bazelbuild/rules_python/issues/603
+
 ## Update requirements lockfile
 
 ```bash
